@@ -1926,59 +1926,59 @@ from wsgiref.simple_server import software_version
 # Будемо використовувати варіант, в якому числа 4, 9, 40, 90, 400 і 900 записуються як віднімання від більшого числа меншого:
 # IV, IX, XL, XC, CD і CM, відповідно. Напишіть програму, яка за введеним натуральним числом n (0 < n < 4000) виведе рядок,
 # що містить число, закодоване в римській системі числення.
-
-num = 2025
-from_num_to_rom_num = ''
-rom_num = {1: 'I', 5: 'V', 10: 'X', 50: 'L',100: 'C', 500: 'D', 1000: 'M'}
-
-thousands = num // 1000
-hundreds = (num % 1000) // 100
-tens = (num % 100) // 10
-units = num % 10
-
-#           for thousands
-from_num_to_rom_num += thousands * rom_num[1000]
-
-#           for hundreds
-match hundreds:
-    case hundreds if hundreds < 4:
-        from_num_to_rom_num += rom_num[100] * hundreds
-    case hundreds if hundreds == 4:
-        from_num_to_rom_num += rom_num[100] + rom_num[500]
-    case hundreds if hundreds == 5:
-        from_num_to_rom_num += rom_num[500]
-    case hundreds if 5 < hundreds < 9:
-        from_num_to_rom_num += rom_num[500] + rom_num[100] * (hundreds - 5)
-    case hundreds if hundreds == 9:
-            from_num_to_rom_num += rom_num[100] + rom_num[1000]
-
-#           for tens
-match tens:
-    case tens if tens < 4:
-        from_num_to_rom_num += rom_num[10] * tens
-    case tens if tens == 4:
-        from_num_to_rom_num += rom_num[10] + rom_num[50]
-    case tens if tens == 5:
-        from_num_to_rom_num += rom_num[50]
-    case tens if 5 < tens < 9:
-        from_num_to_rom_num += rom_num[50] + rom_num[10] * (tens - 5)
-    case tens if tens == 9:
-            from_num_to_rom_num += rom_num[10] + rom_num[100]
-
-#           for units
-match units:
-    case units if units < 4:
-        from_num_to_rom_num += rom_num[1] * units
-    case units if units == 4:
-        from_num_to_rom_num += rom_num[1] + rom_num[5]
-    case units if units == 5:
-        from_num_to_rom_num += rom_num[5]
-    case units if 5 < units < 9:
-        from_num_to_rom_num += rom_num[5] + rom_num[1] * (units - 5)
-    case units if units == 9:
-            from_num_to_rom_num += rom_num[1] + rom_num[10]
-
-print(from_num_to_rom_num)
+#
+# num = 2025
+# from_num_to_rom_num = ''
+# rom_num = {1: 'I', 5: 'V', 10: 'X', 50: 'L',100: 'C', 500: 'D', 1000: 'M'}
+#
+# thousands = num // 1000
+# hundreds = (num % 1000) // 100
+# tens = (num % 100) // 10
+# units = num % 10
+#
+# #           for thousands
+# from_num_to_rom_num += thousands * rom_num[1000]
+#
+# #           for hundreds
+# match hundreds:
+#     case hundreds if hundreds < 4:
+#         from_num_to_rom_num += rom_num[100] * hundreds
+#     case hundreds if hundreds == 4:
+#         from_num_to_rom_num += rom_num[100] + rom_num[500]
+#     case hundreds if hundreds == 5:
+#         from_num_to_rom_num += rom_num[500]
+#     case hundreds if 5 < hundreds < 9:
+#         from_num_to_rom_num += rom_num[500] + rom_num[100] * (hundreds - 5)
+#     case hundreds if hundreds == 9:
+#             from_num_to_rom_num += rom_num[100] + rom_num[1000]
+#
+# #           for tens
+# match tens:
+#     case tens if tens < 4:
+#         from_num_to_rom_num += rom_num[10] * tens
+#     case tens if tens == 4:
+#         from_num_to_rom_num += rom_num[10] + rom_num[50]
+#     case tens if tens == 5:
+#         from_num_to_rom_num += rom_num[50]
+#     case tens if 5 < tens < 9:
+#         from_num_to_rom_num += rom_num[50] + rom_num[10] * (tens - 5)
+#     case tens if tens == 9:
+#             from_num_to_rom_num += rom_num[10] + rom_num[100]
+#
+# #           for units
+# match units:
+#     case units if units < 4:
+#         from_num_to_rom_num += rom_num[1] * units
+#     case units if units == 4:
+#         from_num_to_rom_num += rom_num[1] + rom_num[5]
+#     case units if units == 5:
+#         from_num_to_rom_num += rom_num[5]
+#     case units if 5 < units < 9:
+#         from_num_to_rom_num += rom_num[5] + rom_num[1] * (units - 5)
+#     case units if units == 9:
+#             from_num_to_rom_num += rom_num[1] + rom_num[10]
+#
+# print(from_num_to_rom_num)
 
 
 
