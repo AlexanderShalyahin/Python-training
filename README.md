@@ -54,7 +54,7 @@
 
 📧 **alexworkmail12345@gmail.com**  
 💬 **Telegram**: [@Olexa888]
-🔗 [LinkedIn профіль](www.linkedin.com/in/олександр-шаляхін-0620a2290)  
+🔗 [LinkedIn профіль](https://linkedin.com/in/олександр-шаляхін-0620a2290)  
 
 ---------------
 
