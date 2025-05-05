@@ -1104,7 +1104,7 @@ from stringprep import b1_set
 # leap = []
 #
 # for y in range(from_year, to_year):
-#     if ((year%4 == 0) and (year%100 != 0)) or (year%400 == 0):
+#     if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
 #         leap.append(y)
 #
 # if year in leap:
