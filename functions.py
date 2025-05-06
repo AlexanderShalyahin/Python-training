@@ -622,11 +622,218 @@ from os import lstat
 # def amount(n, p, m):
 #     return n * (p / 100) * m + n
 #
-# 
+#
 # n = 5000
 # p = 18
 # m = 2
 # print(f'{amount(n, p, m):.2f}')
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#657. Дано дійсне додатне число a і ціле число n, яке може набувати додатних і від’ємних значень. Напишіть функцію для обчислення an.
+# Стандартною функцією піднесення до степеня і оператором ** користуватися не можна.
+# def exponentiation(a, n):
+#     exp = 1
+#
+#     for _ in range(abs(n)):
+#         exp *= a
+#
+#     return exp if n > 0 else 1 / exp
+#
+#
+# a = 2
+# n = 1
+# print(f'{exponentiation(a, n):.1f}')
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#658. Напишіть функцію, яка отримує значення середньомісячної кількості опадів по місяцях (в мм) і повертає загальний
+# обсяг опадів протягом року, середньорічну кількість опадів, назви місяців та значення з найвищим та найменшим числом опадів протягом року.
+# def amount_of_precipitation(lst):
+#     month = {'January': 0, 'February': 0, 'March': 0, 'April': 0, 'May': 0, 'June': 0, 'July': 0, 'August': 0,
+#              'September': 0, 'October': 0, 'November': 0, 'December': 0}
+#
+#     count_month = 0
+#     for mon, amount in month.items():
+#         month[mon] = lst[count_month]
+#         count_month += 1
+#
+#     b = []
+#     s = []
+#     for mon, amount in month.items():
+#         if amount == max(month.values()):
+#             b.append(float(amount))
+#             b.append(mon)
+#         elif amount == min(month.values()):
+#             while len(s) < 2:
+#                 s.append(float(amount))
+#                 s.append(mon)
+#
+#     return sum(month.values()), sum(month.values()) / len(month), tuple(b), tuple(s)
+#
+#
+# lst = [22, 22, 24, 49, 72, 98, 101, 82, 51, 40, 36, 24]
+# print(amount_of_precipitation(lst))
+#***********************OR LIKE THIS **************************************
+# def amount_of_precipitation(lst):
+#     month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+#     month_precipitation = dict(zip(month, precipitation)) #     Функція zip() об'єднує n-ий елемент з першого списку з n-им елементом другого
+#                                                           #     zip(months, lst) створює пари (кортежі), поєднуючи елементи з обох списків
+#     total = float(sum(month_precipitation.values()))
+#     average = float(sum(month_precipitation.values()) / len(month_precipitation))
+#
+#     max_precipitation = max(month_precipitation.items(), key=lambda value: value[1]) #      приймає один аргумент x (кортеж на кшталт ('March', 24)),
+#     min_precipitation = min(month_precipitation.items(), key=lambda value: value[1]) #      і повертає друге значення з цього кортежу — тобто кількість опадів
+#
+#     return total, average, (float(max_precipitation[1]), max_precipitation[0]), (float(min_precipitation[1]), min_precipitation[0])
+#
+#
+# precipitation = [22, 22, 24, 49, 72, 98, 101, 82, 51, 40, 36, 24]
+# print(amount_of_precipitation(precipitation))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#659. Написати функцію для перевірки правильності введеної дати. Функція приймає 3 аргументи - день, місяць та рік і повертає True,
+# якщо така дата є в календарі, і False в протилежному випадку.
+# def calendar(day, month, year):
+#     if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+#         month_days = {1: 31, 2: 29, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
+#     else:
+#         month_days = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
+#
+#     if month in month_days:
+#         if day <= month_days[month]:
+#             return True
+#         else:
+#             return False
+#     else:
+#         return False
+#
+#
+# day = 29
+# month = 2
+# year = 2024
+# print(calendar(day, month, year))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#660. Напишіть функцію для перевірки, чи є число ідеальним чи ні. Примітка. У теорії чисел ідеальне число - це додатне ціле число,
+# яке дорівнює сумі власних додатних дільників, тобто сумі додатних дільників, виключаючи саме число.
+# Відповідно, ідеальне число - це число, що дорівнює половині суми всіх додатних дільників (включаючи саме число).
+# Наприклад: перше ідеальне число - 6, оскільки 1, 2 і 3 - це правильні додатні дільники, а 1 + 2 + 3 = 6. Відповідно,
+# число 6 дорівнює половині суми всіх його додатних дільників: (1 + 2 + 3 + 6) / 2 = 6.
+# Наступне ідеальне число - 28 = 1 + 2 + 4 + 7 + 14. Далі ідуть ідеальні числа 496 і 8128.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
