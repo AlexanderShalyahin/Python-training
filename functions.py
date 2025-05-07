@@ -715,33 +715,107 @@ from os import lstat
 # Наприклад: перше ідеальне число - 6, оскільки 1, 2 і 3 - це правильні додатні дільники, а 1 + 2 + 3 = 6. Відповідно,
 # число 6 дорівнює половині суми всіх його додатних дільників: (1 + 2 + 3 + 6) / 2 = 6.
 # Наступне ідеальне число - 28 = 1 + 2 + 4 + 7 + 14. Далі ідуть ідеальні числа 496 і 8128.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# def perfect_number(n):
+#     result = []
+#     for i in range(1, int(n ** 0.5) + 1):
+#         if n % i == 0:
+#             result.append(i)
+#             d = int(n / i)
+#             if d not in result and d != n:
+#                 result.append(d)
+#     result.sort()
+#     return sum(result) == n
+#
+#
+# n = 28
+# print(perfect_number(n))
+#*********** приклад використання функції для знаходження ідеальних чисел********************
+# r = []
+# for i in range(1, 100000):
+#     if perfect_number(i):
+#         r.append(i)
+# print(r)
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#661. На стадіоні є три категорії місць для сидіння: місця класу A коштують a грошових одиниць, місця класу B коштують b грошових одиниць,
+# а місця класу C - c грошових одиниць. Напишіть першу функцію, яка запитує скільки продано квитків на кожний клас місць, і другу функцію,
+# яка відображає суму отриманого доходу від продажу квитків на кожен клас окремо і загалом. Формати введення і виведення такі, як у вхідних і вихідних даних.
+# def number_of_tickets(all_data):
+#     tickets_and_class = {}
+#     for i in all_data:
+#         tickets_and_class[i[0]] = i[2]
+#
+#     return tickets_and_class
+#
+#
+# def profit(tickets, all_data):
+#     price_and_class = {}
+#     for i in all_data:
+#         price_and_class[i[0]] = i[1]
+#
+#     profit_class = {}
+#     for k,v in tickets.items():
+#         income = v * price_and_class[k]
+#         profit_class[k] = income
+#
+#     return profit_class
+#
+#
+# all_data = [['A', 20.50, 45], ['B', 15.75, 30], ['C', 10.55, 15]]
+#
+# tickets = number_of_tickets(all_data)
+# p = profit(tickets, all_data)
+#
+# print((p, sum(p.values())))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#662. Напишіть функцію, яка отримує послідовність балів (цілі числа) і повертає буквенну інтерпретацію числових балів на основі наступної шкали оцінок
+# 90-100 - A
+# 80-89 - B
+# 70-79 - C
+# 60-69 - D
+# Нижче 60 - F
+# def literal_interpretation(pointa):
+#     literal = {'A': [], 'B': [], 'C':[], 'D':[], 'F': []}
+#
+#     for point in points:
+#         if 90 <= point <= 100:
+#             literal['A'] += [point]
+#         elif 80 <= point <= 89:
+#             literal['B'] += [point]
+#         elif 70 <= point <= 79:
+#             literal['C'] += [point]
+#         elif 60 <= point <= 69:
+#             literal['D'] += [point]
+#         elif point < 60:
+#             literal['F'] += [point]
+#
+#     return literal
+#
+# points = [60, 80, 64, 45, 35, 87, 90, 95, 91, 64, 78]
+# print(literal_interpretation(points))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#663. Напишіть функцію, яка перевіряє, чи рядок є паліндром чи ні. Регістр літер, пропуски і знаки пунктуації не враховувати.
+# Примітка. Паліндром - це слово, фраза або послідовність, яка читається так само як зліва направо, так і справа наліво.
+# def palindrome_or_not(s):
+#     a = [literal.lower() for literal in s if literal.isalnum()]
+#     result = ''.join(a)
+#
+#     return result == result[::-1]
+#
+#
+# s = '"Was it a car or a cat I saw?"'
+# print(palindrome_or_not(s))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#664.Напишіть функцію для сортування рядка в алфавітному порядку без врахування регістру літер.
+# def alphabetical_order(s):
+#     order = [l for l in s]
+#     a = sorted(order, key=str.lower)
+#     result = ''.join(a)
+#
+#     return result
+#
+#
+# s = 'JavaScript'
+# print(alphabetical_order(s))
 
 
 
