@@ -50,6 +50,7 @@
 #     elif a == b:
 #         print('equal')
 #
+import heapq
 from os import lstat
 
 # maximun_num(3, 3)
@@ -816,62 +817,138 @@ from os import lstat
 #
 # s = 'JavaScript'
 # print(alphabetical_order(s))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#665. Напишіть функцію для сортування рядка в порядку, протилежному алфавітному, без врахування регістру літер.
+# def alphabetical_order(s):
+#     order = [l for l in s]
+#     a = sorted(order, key=str.lower, reverse=True)
+#     result = ''.join(a)
+#
+#     return result
+#
+#
+# s = 'Ruby'
+# print(alphabetical_order(s))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#666.Напишіть функцію для сортування рядка слів, розділених пропусками, за довжиною слів в порядку зростання.
+# def growth(s):
+#     some_dict = {word: len(word) for word in s.split()}
+#     result = sorted(some_dict, key=lambda word: some_dict[word])
+#     res = ' '.join(result)
+#     return res
+#
+#
+# s = 'Ruby Python Go JavaScript Java'
+# print(growth(s))
+#***********************OR LIKE THIS **************************************
+# def growth(s):
+#     result = sorted(s.split(), key= len)
+#     res = ' '.join(result)
+#     return res
+#
+#
+# s = 'Ruby Python Go JavaScript Java'
+# print(growth(s))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#667. Напишіть функцію для сортування рядка слів, розділених пропусками, за довжиною слів в порядку зменшення.
+# def growth(s):
+#     some_dict = {word: len(word) for word in s.split()}
+#     result = sorted(some_dict, key=lambda word: some_dict[word], reverse=True)
+#     res = ' '.join(result)
+#     return res
+#
+#
+# s = 'Ruby Python Go JavaScript Java'
+# print(growth(s))
+#***********************OR LIKE THIS **************************************
+# def growth(s):
+#     result = sorted(s.split(), key= len, reverse=True)
+#     res = ' '.join(result)
+#     return res
+#
+#
+# s = 'Ruby Python Go JavaScript Java'
+# print(growth(s))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#668. Напишіть функцію, яка створює комбінацію із двох послідовностей цілих чисел, впорядковану за зростанням.
+# def together(lst1, lst2):
+#     result = list(heapq.merge(sorted(lst1), sorted(lst2)))
+#     return result
+#
+#
+# lst1 = [1, 4, 0, 12, 4, 5]
+# lst2 = [24, 1, 2, 10, 8]
+# print(*together(lst1, lst2))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#669. Напишіть функцію, яка створює комбінацію двох послідовностей таким чином як у вихідних даних.
+# def together(lst1, lst2):
+#     res = list(zip(lst1, lst2))
+#     result = []
+#     for i in res:
+#         for w in i:
+#             result.append(str(w))
+#     g = ' '.join(result)
+#     return g
+#
+# lst1 = [1, 2, 3, 4, 5]
+# lst2 = ['a', 'b', 'c', 'd', 'e']
+# print(together(lst1, lst2))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#670. Дано список кортежів, кожен з яких містить два значення: назва фільму (рядок) і рейтинг (дійсне число).
+# Напишіть функцію(ї) для сортування кортежів в порядку зростання рейтингу.
+# def rating(movie):
+#     return sorted(movie, key= lambda x: x[1])
+#
+#
+# movie = [('Avengers: Endgame', 8.7), ('Toy Story 4', 8.2), ('Aladdin', 7.4),('Captain Marvel', 7.0)]
+# print(rating(movie))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#671. Напишіть функцію для обчислення факторіала заданого числа.
+# def factorial(n):
+#     result = 1
+#     for number in range(1, n+1):
+#         result *= number
+#
+#     return result
+#
+#
+# print(factorial(5))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#672. Напишіть функцію для перевертання кожного слова у введеному тексті.
+# def turning_over(s):
+#     return ' '.join(word[::-1] for word in s.split())
+#
+#
+# print(turning_over('oN ,nomel on nolem'))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#673. Напишіть функцію для перевірки, чи є даний рядок анаграмою іншого рядка.
+# Букви початкового рядка використовуються одноразово і враховується регістр літер.
+# Примітка. Анаграма - переставлення літер у слові, завдяки чому утворюється нове значення слова.
+# def anagram_or_not(a, b):
+#     first_dict = {letter: a.count(letter) for letter in a if letter.isalnum()}
+#     second_dict = {letter: b.count(letter) for letter in b if letter.isalnum()}
+#     return first_dict == second_dict
+#
+#
+# a = 'I am Lord Voldemort'
+# b = 'tom marVoLo rIddle'
+# print(anagram_or_not(a,b))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#674. Напишіть функцію для знаходження кількість повторень елементів у послідовності, які вводяться через кому в один рядок,
+# і виведіть список пар «елемент- кількість повторень» в порядку спадання кількості повторень як у вихідних даних.
+# def repet_of_elements(numbers):
+#     lst = [el for el in numbers.split(',')]
+#     result = set()
+#
+#     for num in lst:
+#         result.add((int(num), lst.count(num)))
+#     res = [i for i in result]
+#
+#     return sorted(res, key= lambda x: x[1], reverse=True)
+#
+#
+# numbers = '1,2,3,4,3,3,2,4,5,6,1,2,3,4,6,1,2,3,4,6,6'
+# print(repet_of_elements(numbers))
 
 
 
