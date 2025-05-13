@@ -1017,45 +1017,92 @@ from os import lstat
 # Перед першим запитом введення повинен бути виведене значення start_message, після кожного помилкового введення потрібно виводити
 # значення рядка error_message і при вдалому введенні потрібно вивести рядок end_message і повернути отримане ціле число з функції.
 # Кожне повідомлення повинно знаходитися на окремому рядку. Гарантовано, що в якийсь момент користувачем буде введено ціле число.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# def enter_intenger(start_message, error_message, end_message):
+#     active = True
+#     start = input(start_message)
+#     while active:
+#         try:
+#             print(int(start))
+#             print(end_message)
+#             active = False
+#         except ValueError:
+#             start = input(error_message)
+#
+#
+# start_message = 'Input int number: '
+# error_message = 'Wrong value. Input int number: '
+# end_message = 'Thank you.'
+# enter_intenger(start_message, error_message, end_message)
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#681. Дано список цілих чисел, в якому зустрічаються однакові значення. Напишіть функцію для друку цього списку після видалення всіх однакових значень.
+# def without_repetitions(lst):
+#     '''якщо не треба зберігати порядок даних у списку,
+#     робимо все через множини'''
+#     return set(lst)
+#
+#
+# lst = [45, 67, 23, 45, 111, 67, 12, 55]
+# print(*without_repetitions(lst))
+#***********************OR LIKE THIS **************************************
+# def without_repetitions(lst):
+#     '''якщо треба зберігати порядок даних у списку,
+#     робимо все через словник'''
+#     return list(dict.fromkeys(lst))
+#
+#
+# lst = [45, 67, 23, 45, 111, 67, 12, 55]
+# print(*without_repetitions(lst))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#682. Напишіть функцію для отримання всіх можливих двозначних комбінації літер із рядка цифр (від 1 до 9).
+# Для розв’язування задачі використайте словник: string_maps = {'1': 'abc', '2': 'def', '3': 'ghi', '4': 'jkl', '5': 'mno', '6': 'pqrs', '7': 'tuv', '8': 'wxy', '9': 'z'}.
+# def combinations(num):
+#     string_maps = {'1': 'abc', '2': 'def', '3': 'ghi', '4': 'jkl', '5': 'mno', '6': 'pqrs', '7': 'tuv', '8': 'wxy',
+#                    '9': 'z'}
+#     first_key = string_maps[str(num)[0]]
+#     second_key = string_maps[str(num)[1]]
+#     result = []
+#
+#     for i in first_key:
+#         for w in second_key:
+#             result.append(i+w)
+#
+#     return result
+#
+#
+# print(combinations(12))
+# print(combinations(11))
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# 683. Напишіть функцію для виконання рядка, що містить код Python. Реалізуйте функцію разом із конструкцією try/except, яка має відпрацювати як у вихідних даних.
+# def echo(anything):
+#     exec(anything)
+#
+#
+# try:
+#     echo("print('Hello, World!')")
+#     print("Successfully")
+#     print('Done')
+# except:
+#     print('Not fulfilled')
+#     print('Done')
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#684. Напишіть функцію для перевірки, чи є рядок «панграмою» чи ні. Примітка. Панграма - фраза, вислів або текст
+# в якому присутні всі літери абетки принаймні по одному разу. Наприклад: «How vexingly quick daft zebras jump» (30 літер),
+# «The five boxing wizards jump quickly» (31 літера), «Cwm fjord bank glyphs vext quiz» (26 літер), «The quick brown fox jumps over the lazy dog» (35 літер).
+# def pangram(s):
+#     """через словник"""
+#     s = s.lower()
+#     alphabet = {letter: s.count(letter) for letter in s if letter.isalpha()}
+#     return len(alphabet) == 26
+#
+# 
+# print(pangram('Cwm fjord bank glyphs vext quiz'))
+#***********************OR LIKE THIS **************************************
+# def pangram(s):
+#     """через множину"""
+#     return len(set(s.lower()) & set("abcdefghijklmnopqrstuvwxyz")) == 26
+#
+#
+# print(pangram('Cwmc fjord bank glyphs vext quiz'))
 
 
 
